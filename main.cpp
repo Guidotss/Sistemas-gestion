@@ -13,6 +13,7 @@ int main()
 {
     int opcion = 0;
     int counter = 0;
+    int transaccionCounter = 0; 
     vector<Cliente> clientes;
     vector<Transaccion> transacciones;
 
@@ -53,8 +54,8 @@ int main()
             cin>>nro_cliente; 
             transacciones = crearTransaccion(transacciones);
 
-            transacciones[counter].nuevaTransaccion(&clientes[nro_cliente-1], &transacciones[counter - transacciones.size() * (counter != transacciones.size()) - counter==transacciones.size()]);
-            cout<<(counter - transacciones.size() * (counter != transacciones.size()) - counter==transacciones.size())<<endl; 
+            transacciones[transaccionCounter].nuevaTransaccion(&clientes[nro_cliente-1], &transacciones[transaccionCounter]);
+            transaccionCounter++; 
 
             break;
         case 4:

@@ -23,3 +23,9 @@ anio: 2000
 tipo: oro
 estado: activo
 ----------cliente 50463490------------
+----------cliente 1------------
+nombre: guido
+apellido: olguin
+anio: 2001
+tipo: oro
+estado: activo
