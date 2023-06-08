@@ -44,13 +44,14 @@ void Transaccion::Mostrar(int periodo)
 vector<Transaccion> Transaccion::nuevaTransaccion(Cliente *cliente, Transaccion *nueva_transaccion)
 {
 
-    cout<<cliente->Get_nro_cliente()<<endl; 
+
     ofstream archivoTransaccion("transacciones.txt", ios::app);
     if (!archivoTransaccion)
     {
         cerr << "Error al abrir archivo" << endl;
         return transaccionVector;
     }
+     
 
     if (nueva_transaccion->Get_tipoT() == 'D')
     {
@@ -65,6 +66,8 @@ vector<Transaccion> Transaccion::nuevaTransaccion(Cliente *cliente, Transaccion 
         cout << "No se puede realizar la transaccion" << endl;
         return transaccionVector;
     }
+
+    nueva_transaccion->setCliente(cliente);
     archivoTransaccion << "------------" << cliente->Get_nro_cliente() << "------------" << endl;
     archivoTransaccion << "Nro transaccion " << nueva_transaccion->Get_nro_transaccion() << endl;
     archivoTransaccion << "Cantidad: " << nueva_transaccion->Get_cantidad() << endl;
@@ -81,65 +84,8 @@ vector<Transaccion> Transaccion::nuevaTransaccion(Cliente *cliente, Transaccion 
     return transaccionVector;
 }
 
-vector<Transaccion> Transaccion::transaccionPorCliente(int clienteBuscado)
-{
-    vector<Transaccion> transaccionesCliente;
-
-    for (auto &transaccion : transaccionVector)
-    {
-        if (transaccion.Get_nro_cliente() == clienteBuscado)
-        {
-            transaccionesCliente.push_back(transaccion);
-        }
-    }
-
-    return transaccionesCliente;
-}
-
-vector<Transaccion> Transaccion::MostrarPorPeriodo(int mes, int anio)
-{
-    vector<Transaccion> transaccionPeriodo;
-    int mesInicial, anioInicial;
-    mesInicial = mes - 6;
-    anioInicial = anio;
-
-    if ((mesInicial) < 1)
-    {
-        anioInicial--;
-        mesInicial += 12;
-    }
-
-    for (auto &transaccion : transaccionVector)
-    {
-        int anioTransaccion = transaccion.Get_anioT();
-        int mesTransaccion = transaccion.Get_mesT();
-        if ((anioTransaccion > anioInicial && anioInicial <= anio) ||
-            (anioTransaccion == anioInicial && mesTransaccion >= mesInicial) ||
-            (anioTransaccion == anio && mesInicial <= mes))
-        {
-            transaccionPeriodo.push_back(transaccion);
-        }
-    }
-    return transaccionPeriodo;
-}
-
-vector<Transaccion> Transaccion::MostrarPorAnio(int anio)
-{
-    vector<Transaccion> transaccionAnio;
-    for (auto &transaccion : this->transaccionVector)
-    {
-        if (anio == transaccion.Get_anioT())
-        {
-            transaccionAnio.push_back(transaccion);
-        }
-    }
-
-    return transaccionAnio;
-}
-
-vector<Transaccion> Transaccion::MostrarTotal()
-{
-    return transaccionVector;
+void Transaccion::setCliente(Cliente* cliente){
+    this->cliente = cliente;
 }
 
 int Transaccion::Get_nro_transaccion()
@@ -168,10 +114,6 @@ int Transaccion::Get_anioT()
 }
 int Transaccion::Get_nro_cliente()
 {
-    return this->nroCliente;
+    return this->cliente->Get_nro_cliente();
 }
 
-void Transaccion::Set_nroCliente(int _nroCliente)
-{
-    this->nroCliente = _nroCliente;
-}

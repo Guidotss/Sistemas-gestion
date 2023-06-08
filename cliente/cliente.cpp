@@ -54,7 +54,10 @@ int Cliente::Get_nro_cliente(){
 }
 
 string Cliente::cambiarEstado() {
-    this->estado == "activo" ? this->estado = "inactivo" : "activo";
+    //this->estado == "activo" ? this->estado = "inactivo" : "activo";
+    if(this->estado == "activo"){
+        this->estado = "inactivo"; 
+    }
     return this->estado;
 }
 
@@ -81,70 +84,10 @@ vector<Cliente> Cliente::AgregarCliente(Cliente *nuevo_cliente) {
     return clientesVector;
 }
 
-vector<Cliente> Cliente::BuscarClientePorId(int nro_cliente){ 
-    vector<Cliente>cliente;
-    for(auto &it : this->clientesVector){ 
-        if(it.Get_nro_cliente() == nro_cliente){ 
-            cout<<it.Get_nombre()<<endl;
-            cout<<it.Get_apellido()<<endl;
-            cout<<it.Get_anioC()<<endl;
-            cout<<it.Get_tipoC()<<endl;
-            cout<<it.Get_estado()<<endl;
-            cliente.push_back(it);
-        }
-    }
-
-    return cliente;
-    
-}
-
-vector<Cliente> Cliente::EliminarCliente(int nro_cliente) {
-    vector<Cliente>cliente = BuscarClientePorId(nro_cliente);
-    if(cliente.size() == 0){
-        cout<<"No se encontro el cliente"<<endl;
-        return this->clientesVector; 
-    }
-
-    ofstream archivoClientes("clientes.txt"); 
-
-    if(!archivoClientes){
-        cerr<<"Error al abrir archivo"<<endl;
-    }
-    
-    for(auto &it : this->clientesVector){ 
-        archivoClientes<<"----------cliente "<<it.Get_nro_cliente()<<"------------"<<endl;
-        archivoClientes<<"nombre "<<it.Get_nombre()<<endl;
-        archivoClientes<<"apellido "<<it.Get_apellido()<<endl;
-        archivoClientes<<"tipo "<<it.Get_tipoC()<<endl;
-        archivoClientes<<"estado "<<it.Get_estado()<<endl;
-        cout<<endl<<endl;
-    }
-
-    return clientesVector;
-};
-
-void Cliente::Get_Clientes(){
-
-    ifstream archivoClientes("clientes.txt");
-    if(!archivoClientes){
-        cerr<<"Error al abrir archivo"<<endl;
-    }
 
 
-    archivoClientes.seekg(0, ios::end);
-    if(archivoClientes.tellg() == 0){
-        cout<<"No hay clientes registrados"<<endl;
-        return;
-    }else{ 
-        archivoClientes.seekg(0, ios::beg);
-        string linea;
-        while(getline(archivoClientes, linea)){
-            cout<<linea<<endl;
-        }
-        archivoClientes.close();
-    }
 
-}
+
 void Cliente:: Set_saldo(float _saldo){
     saldo = _saldo;
 }
