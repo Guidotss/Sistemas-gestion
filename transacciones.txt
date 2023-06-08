@@ -1,29 +1,14 @@
-
 ------------1------------
 Nro transaccion 1
-Cantidad: 200
-Tipo: D
-Dia: 1
-Mes: 2
-Anio: 2001
-------------1------------
-Nro transaccion 2
 Cantidad: 300
 Tipo: D
 Dia: 1
 Mes: 2
 Anio: 2010
 ------------1------------
-Nro transaccion 3
-Cantidad: 400
+Nro transaccion 2
+Cantidad: 500
 Tipo: D
-Dia: 3
-Mes: 7
-Anio: 2023
-------------1------------
-Nro transaccion 4
-Cantidad: 400
-Tipo: D
-Dia: 30
-Mes: 7
-Anio: 2023
+Dia: 2
+Mes: 3
+Anio: 2003

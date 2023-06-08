@@ -1,9 +1,8 @@
 #include "cliente/cliente.h"
 #include "transaccion/transaccion.h"
 #include "menues.cpp"
-#include <memory.h>
+#include "utils/utils.h"
 #include <iostream>
-#include <stdexcept>
 
 #define CYAN "\033[36m"
 
@@ -13,7 +12,7 @@ int main()
 {
     int opcion = 0;
     int counter = 0;
-    int transaccionCounter = 0; 
+    int transaccionCounter = 0;
     vector<Cliente> clientes;
     vector<Transaccion> transacciones;
 
@@ -22,7 +21,7 @@ int main()
 
         cout << CYAN << "Sistema de Gestion:" << endl;
         cout << "1. Crear cliente." << endl;
-        cout << "2. Eliminar cliente."<<endl;
+        cout << "2. Eliminar cliente." << endl;
         cout << "3. Realizar transaccion." << endl;
         cout << "4. Buscar un cliente por su codigo." << endl;
         cout << "5. Mostrar todos los clientes." << endl;
@@ -41,21 +40,21 @@ int main()
             clientes[counter].AgregarCliente(&clientes[counter]);
             break;
         case 2:
-            cout<<"Ingrese el numero del cliente que quiere eliminar: "; 
-            int code; 
-            cin>>code;
-            EliminarCliente(code, clientes); 
+            cout << "Ingrese el numero del cliente que quiere eliminar: ";
+            int code;
+            cin >> code;
+            EliminarCliente(code, clientes);
             break;
 
         case 3:
 
-            cout<<"Ingese el numero del cliente que hara la transaccion: "; 
-            int nro_cliente; 
-            cin>>nro_cliente; 
+            cout << "Ingese el numero del cliente que hara la transaccion: ";
+            int nro_cliente;
+            cin >> nro_cliente;
             transacciones = crearTransaccion(transacciones);
 
-            transacciones[transaccionCounter].nuevaTransaccion(&clientes[nro_cliente-1], &transacciones[transaccionCounter]);
-            transaccionCounter++; 
+            transacciones[transaccionCounter].nuevaTransaccion(&clientes[nro_cliente - 1], &transacciones[transaccionCounter]);
+            transaccionCounter++;
 
             break;
         case 4:
@@ -67,9 +66,10 @@ int main()
             BuscarClientePorId(code, clientes);
             break;
         }
-        case 5: 
+        case 5:
             mostrarClientes();
-            cout<<endl<<endl;
+            cout << endl
+                 << endl;
             break;
         case 6:
             int codigoCliente;
@@ -78,25 +78,28 @@ int main()
 
             transaccionPorCliente(codigoCliente, transacciones);
             break;
-        case 7: 
-            int opcion; 
-            cout<<"1. Mostrar total"<<endl; 
-            cout<<"2. Buscar por anio"<<endl; 
-            cout<<"3. Buscar por periodo de 6 meses"<<endl; 
-            cout<<"Opcion: "; 
-            cin>>opcion; 
+        case 7:
+            int opcion;
+            cout << "1. Mostrar total" << endl;
+            cout << "2. Buscar por anio" << endl;
+            cout << "3. Buscar por periodo de 6 meses" << endl;
+            cout << "Opcion: ";
+            cin >> opcion;
 
-            if(opcion == 1) {
-                MostrarTotal(transacciones); 
-            }else if(opcion == 2){
-                cout<<"Ingrese un anio: ";
-                int anio; 
-                cin>>anio; 
-                MostrarPorAnio(anio, transacciones); 
+            if (opcion == 1)
+            {
+                MostrarTotal(transacciones);
+            }
+            else if (opcion == 2)
+            {
+                cout << "Ingrese un anio: ";
+                int anio;
+                cin >> anio;
+                MostrarPorAnio(anio, transacciones);
             }
 
             break;
-            
+
         default:
             break;
         }
