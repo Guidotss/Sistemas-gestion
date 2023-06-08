@@ -1,0 +1,6 @@
+----------cliente 1------------
+nombre: aa
+apellido: bb
+anio: 2000
+tipo: oro
+estado: activo
