@@ -1,14 +1,224 @@
 ------------1------------
 Nro transaccion 1
-Cantidad: 300
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 1
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 1
+Cantidad: 20
 Tipo: D
 Dia: 1
 Mes: 2
-Anio: 2010
+Anio: 2000
 ------------1------------
 Nro transaccion 2
-Cantidad: 500
+Cantidad: 12
 Tipo: D
-Dia: 2
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 1
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 4
+Cantidad: 200
+Tipo: D
+Dia: 3
 Mes: 3
-Anio: 2003
+Anio: 2001
+------------1------------
+Nro transaccion 1
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 20
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 20
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 1
+Cantidad: 20
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 20
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 4
+Cantidad: 200
+Tipo: D
+Dia: 1
+Mes: 3
+Anio: 2001
+------------1------------
+Nro transaccion 5
+Cantidad: 1
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2001
+------------1------------
+Nro transaccion 1
+Cantidad: 1
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 1
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 1
+Cantidad: 1
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2000
+------------1------------
+Nro transaccion 2
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 4
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 3
+Anio: 2001
+------------1------------
+Nro transaccion 1
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 1
+Anio: 2001
+------------1------------
+Nro transaccion 2
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 6
+Anio: 2000
+------------1------------
+Nro transaccion 3
+Cantidad: 2
+Tipo: D
+Dia: 1
+Mes: 12
+Anio: 2000
+------------1------------
+Nro transaccion 4
+Cantidad: 20
+Tipo: D
+Dia: 1
+Mes: 3
+Anio: 2001

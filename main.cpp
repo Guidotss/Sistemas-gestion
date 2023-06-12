@@ -96,6 +96,13 @@ int main()
                 int anio;
                 cin >> anio;
                 MostrarPorAnio(anio, transacciones);
+            }else if(opcion==3){
+                int anio, mes;
+                cout<<"Ingrese un anio: ";
+                cin>>anio;
+                cout<<"Ingrese un mes: ";
+                cin>>mes;
+                MostrarPorPeriodo(mes, anio, transacciones);
             }
 
             break;

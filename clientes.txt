@@ -1,6 +1,0 @@
-----------cliente 1------------
-nombre: guido
-apellido: olguin
-anio: 2002
-tipo: oro
-estado: activo

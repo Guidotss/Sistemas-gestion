@@ -1,5 +1,7 @@
 #include"./utils.h"
 
+using namespace std; 
+
 void BuscarClientePorId(int nro_cliente, vector<Cliente> clientes)
 {
     for (auto &it : clientes)
@@ -90,36 +92,75 @@ void transaccionPorCliente(int clienteBuscado, vector<Transaccion> transacciones
     }
 }
 
-vector<Transaccion> MostrarPorPeriodo(int mes, int anio, vector<Transaccion> transaccionVector)
+
+void MostrarPorPeriodo(int mes, int anio, vector<Transaccion> transaccionVector)
 {
     vector<Transaccion> transaccionPeriodo;
     int mesInicial, anioInicial;
     mesInicial = mes - 6;
+    bool flag=false;
     anioInicial = anio;
 
-    if ((mesInicial) < 1)
-    {
+    if (mesInicial<1){
         anioInicial--;
         mesInicial += 12;
+        flag=true;
     }
 
     for (auto &transaccion : transaccionVector)
     {
         int anioTransaccion = transaccion.Get_anioT();
         int mesTransaccion = transaccion.Get_mesT();
-        if ((anioTransaccion > anioInicial && anioInicial <= anio) ||
-            (anioTransaccion == anioInicial && mesTransaccion >= mesInicial) ||
-            (anioTransaccion == anio && mesInicial <= mes))
-        {
-            cout << transaccion.Get_nro_transaccion() << endl;
-            cout << transaccion.Get_diaT() << endl;
-            cout << transaccion.Get_mesT() << endl;
-            cout << transaccion.Get_anioT() << endl;
-            cout << transaccion.Get_cantidad() << endl;
-            cout << transaccion.Get_tipoT() << endl;
+        if (flag==true){
+
+            if((anioTransaccion == anio) && (mesTransaccion <= mes)){
+                cout<<"--------------------------"<<endl;
+                cout << transaccion.Get_nro_transaccion() << endl;
+                cout << transaccion.Get_diaT() << endl;
+                cout << transaccion.Get_mesT() << endl;
+                cout << transaccion.Get_anioT() << endl;
+                cout << transaccion.Get_cantidad() << endl;
+                cout << transaccion.Get_tipoT() << endl;
+                cout<<"--------------------------"<<endl<<endl;
+            }else if((anioTransaccion == anioInicial) && (mesTransaccion >= mesInicial)){
+                cout<<"--------------------------"<<endl;
+                cout << transaccion.Get_nro_transaccion() << endl;
+                cout << transaccion.Get_diaT() << endl;
+                cout << transaccion.Get_mesT() << endl;
+                cout << transaccion.Get_anioT() << endl;
+                cout << transaccion.Get_cantidad() << endl;
+                cout << transaccion.Get_tipoT() << endl;
+                cout<<"--------------------------"<<endl<<endl;                
+            }
+        }else{
+            if(anioTransaccion == anio && mesInicial <= mesTransaccion && mesTransaccion <= mes){
+                cout<<"--------------------------"<<endl;
+                cout << transaccion.Get_nro_transaccion() << endl;
+                cout << transaccion.Get_diaT() << endl;
+                cout << transaccion.Get_mesT() << endl;
+                cout << transaccion.Get_anioT() << endl;
+                cout << transaccion.Get_cantidad() << endl;
+                cout << transaccion.Get_tipoT() << endl;
+                cout<<"--------------------------"<<endl<<endl;                
+            }
         }
     }
-    return transaccionPeriodo;
+}
+
+void MostrarTotal(vector<Transaccion> transaccionVector)
+{
+    for (auto &transaccion : transaccionVector)
+    {
+        cout << "----------------------" << endl;
+        cout << transaccion.Get_nro_transaccion() << endl;
+        cout << transaccion.Get_diaT() << endl;
+        cout << transaccion.Get_mesT() << endl;
+        cout << transaccion.Get_anioT() << endl;
+        cout << transaccion.Get_cantidad() << endl;
+        cout << transaccion.Get_tipoT() << endl
+             << endl;
+        cout << "----------------------" << endl;
+    }
 }
 
 void MostrarTotal(vector<Transaccion> transaccionVector)
